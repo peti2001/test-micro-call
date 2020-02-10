@@ -18,82 +18,6 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
-type AddToQueueRequest struct {
-	Name                 string   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *AddToQueueRequest) Reset()         { *m = AddToQueueRequest{} }
-func (m *AddToQueueRequest) String() string { return proto.CompactTextString(m) }
-func (*AddToQueueRequest) ProtoMessage()    {}
-func (*AddToQueueRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{0}
-}
-func (m *AddToQueueRequest) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AddToQueueRequest.Unmarshal(m, b)
-}
-func (m *AddToQueueRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AddToQueueRequest.Marshal(b, m, deterministic)
-}
-func (dst *AddToQueueRequest) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AddToQueueRequest.Merge(dst, src)
-}
-func (m *AddToQueueRequest) XXX_Size() int {
-	return xxx_messageInfo_AddToQueueRequest.Size(m)
-}
-func (m *AddToQueueRequest) XXX_DiscardUnknown() {
-	xxx_messageInfo_AddToQueueRequest.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_AddToQueueRequest proto.InternalMessageInfo
-
-func (m *AddToQueueRequest) GetName() string {
-	if m != nil {
-		return m.Name
-	}
-	return ""
-}
-
-type AddToQueueResponse struct {
-	MessageId            string   `protobuf:"bytes,1,opt,name=messageId,proto3" json:"messageId,omitempty"`
-	XXX_NoUnkeyedLiteral struct{} `json:"-"`
-	XXX_unrecognized     []byte   `json:"-"`
-	XXX_sizecache        int32    `json:"-"`
-}
-
-func (m *AddToQueueResponse) Reset()         { *m = AddToQueueResponse{} }
-func (m *AddToQueueResponse) String() string { return proto.CompactTextString(m) }
-func (*AddToQueueResponse) ProtoMessage()    {}
-func (*AddToQueueResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{1}
-}
-func (m *AddToQueueResponse) XXX_Unmarshal(b []byte) error {
-	return xxx_messageInfo_AddToQueueResponse.Unmarshal(m, b)
-}
-func (m *AddToQueueResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	return xxx_messageInfo_AddToQueueResponse.Marshal(b, m, deterministic)
-}
-func (dst *AddToQueueResponse) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_AddToQueueResponse.Merge(dst, src)
-}
-func (m *AddToQueueResponse) XXX_Size() int {
-	return xxx_messageInfo_AddToQueueResponse.Size(m)
-}
-func (m *AddToQueueResponse) XXX_DiscardUnknown() {
-	xxx_messageInfo_AddToQueueResponse.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_AddToQueueResponse proto.InternalMessageInfo
-
-func (m *AddToQueueResponse) GetMessageId() string {
-	if m != nil {
-		return m.MessageId
-	}
-	return ""
-}
-
 type AckMessageRequest struct {
 	MessageId            string   `protobuf:"bytes,1,opt,name=messageId,proto3" json:"messageId,omitempty"`
 	XXX_NoUnkeyedLiteral struct{} `json:"-"`
@@ -105,7 +29,7 @@ func (m *AckMessageRequest) Reset()         { *m = AckMessageRequest{} }
 func (m *AckMessageRequest) String() string { return proto.CompactTextString(m) }
 func (*AckMessageRequest) ProtoMessage()    {}
 func (*AckMessageRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{2}
+	return fileDescriptor_serviceB_518cdcd575eb92ff, []int{0}
 }
 func (m *AckMessageRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AckMessageRequest.Unmarshal(m, b)
@@ -143,7 +67,7 @@ func (m *AckMessageResponse) Reset()         { *m = AckMessageResponse{} }
 func (m *AckMessageResponse) String() string { return proto.CompactTextString(m) }
 func (*AckMessageResponse) ProtoMessage()    {}
 func (*AckMessageResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{3}
+	return fileDescriptor_serviceB_518cdcd575eb92ff, []int{1}
 }
 func (m *AckMessageResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_AckMessageResponse.Unmarshal(m, b)
@@ -182,7 +106,7 @@ func (m *RabbitMQRequest) Reset()         { *m = RabbitMQRequest{} }
 func (m *RabbitMQRequest) String() string { return proto.CompactTextString(m) }
 func (*RabbitMQRequest) ProtoMessage()    {}
 func (*RabbitMQRequest) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{4}
+	return fileDescriptor_serviceB_518cdcd575eb92ff, []int{2}
 }
 func (m *RabbitMQRequest) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RabbitMQRequest.Unmarshal(m, b)
@@ -227,7 +151,7 @@ func (m *RabbitMQResponse) Reset()         { *m = RabbitMQResponse{} }
 func (m *RabbitMQResponse) String() string { return proto.CompactTextString(m) }
 func (*RabbitMQResponse) ProtoMessage()    {}
 func (*RabbitMQResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_serviceB_edfc14e87992ff3b, []int{5}
+	return fileDescriptor_serviceB_518cdcd575eb92ff, []int{3}
 }
 func (m *RabbitMQResponse) XXX_Unmarshal(b []byte) error {
 	return xxx_messageInfo_RabbitMQResponse.Unmarshal(m, b)
@@ -255,31 +179,27 @@ func (m *RabbitMQResponse) GetGreeting() string {
 }
 
 func init() {
-	proto.RegisterType((*AddToQueueRequest)(nil), "serviceA.AddToQueueRequest")
-	proto.RegisterType((*AddToQueueResponse)(nil), "serviceA.AddToQueueResponse")
 	proto.RegisterType((*AckMessageRequest)(nil), "serviceA.AckMessageRequest")
 	proto.RegisterType((*AckMessageResponse)(nil), "serviceA.AckMessageResponse")
 	proto.RegisterType((*RabbitMQRequest)(nil), "serviceA.RabbitMQRequest")
 	proto.RegisterType((*RabbitMQResponse)(nil), "serviceA.RabbitMQResponse")
 }
 
-func init() { proto.RegisterFile("serviceB.proto", fileDescriptor_serviceB_edfc14e87992ff3b) }
+func init() { proto.RegisterFile("serviceB.proto", fileDescriptor_serviceB_518cdcd575eb92ff) }
 
-var fileDescriptor_serviceB_edfc14e87992ff3b = []byte{
-	// 240 bytes of a gzipped FileDescriptorProto
+var fileDescriptor_serviceB_518cdcd575eb92ff = []byte{
+	// 195 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2b, 0x4e, 0x2d, 0x2a,
 	0xcb, 0x4c, 0x4e, 0x75, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0xe2, 0x80, 0xf2, 0x1d, 0x95,
-	0xd4, 0xb9, 0x04, 0x1d, 0x53, 0x52, 0x42, 0xf2, 0x03, 0x4b, 0x53, 0x4b, 0x53, 0x83, 0x52, 0x0b,
-	0x4b, 0x53, 0x8b, 0x4b, 0x84, 0x84, 0xb8, 0x58, 0xf2, 0x12, 0x73, 0x53, 0x25, 0x18, 0x15, 0x18,
-	0x35, 0x38, 0x83, 0xc0, 0x6c, 0x25, 0x23, 0x2e, 0x21, 0x64, 0x85, 0xc5, 0x05, 0xf9, 0x79, 0xc5,
-	0xa9, 0x42, 0x32, 0x5c, 0x9c, 0xb9, 0xa9, 0xc5, 0xc5, 0x89, 0xe9, 0xa9, 0x9e, 0x29, 0x50, 0xe5,
-	0x08, 0x01, 0x25, 0x43, 0x2e, 0x41, 0xc7, 0xe4, 0x6c, 0x5f, 0x08, 0x1f, 0x66, 0x38, 0x7e, 0x2d,
-	0x3a, 0x5c, 0x42, 0xc8, 0x5a, 0xa0, 0xd6, 0x88, 0x71, 0xb1, 0x15, 0x97, 0x24, 0x96, 0x94, 0x16,
-	0x43, 0x35, 0x40, 0x79, 0x4a, 0xce, 0x5c, 0xfc, 0x41, 0x89, 0x49, 0x49, 0x99, 0x25, 0xbe, 0x81,
-	0x44, 0x19, 0x0f, 0xf7, 0x19, 0x13, 0x92, 0xcf, 0xf4, 0xb8, 0x04, 0x10, 0x86, 0x40, 0x2d, 0x94,
-	0xe2, 0xe2, 0x48, 0x2f, 0x4a, 0x4d, 0x2d, 0xc9, 0xcc, 0x4b, 0x87, 0x1a, 0x02, 0xe7, 0x1b, 0x2d,
-	0x60, 0xe4, 0x82, 0x85, 0x9f, 0x93, 0x90, 0x27, 0x17, 0x17, 0x22, 0x58, 0x84, 0xa4, 0xf5, 0x60,
-	0x01, 0xab, 0x87, 0x11, 0xaa, 0x52, 0x32, 0xd8, 0x25, 0x21, 0x36, 0x2a, 0x31, 0x80, 0x8d, 0x82,
-	0x7b, 0x1d, 0xc5, 0x28, 0xf4, 0x30, 0x44, 0x31, 0x0a, 0x23, 0xb4, 0x94, 0x18, 0x92, 0xd8, 0xc0,
-	0xd1, 0x6c, 0x0c, 0x08, 0x00, 0x00, 0xff, 0xff, 0xcf, 0xfb, 0xfd, 0x4a, 0xf8, 0x01, 0x00, 0x00,
+	0x0c, 0xb9, 0x04, 0x1d, 0x93, 0xb3, 0x7d, 0x53, 0x8b, 0x8b, 0x13, 0xd3, 0x53, 0x83, 0x52, 0x0b,
+	0x4b, 0x53, 0x8b, 0x4b, 0x84, 0x64, 0xb8, 0x38, 0x73, 0x21, 0x22, 0x9e, 0x29, 0x12, 0x8c, 0x0a,
+	0x8c, 0x1a, 0x9c, 0x41, 0x08, 0x01, 0x25, 0x1d, 0x2e, 0x21, 0x64, 0x2d, 0xc5, 0x05, 0xf9, 0x79,
+	0xc5, 0xa9, 0x42, 0x62, 0x5c, 0x6c, 0xc5, 0x25, 0x89, 0x25, 0xa5, 0xc5, 0x50, 0x0d, 0x50, 0x9e,
+	0x92, 0x33, 0x17, 0x7f, 0x50, 0x62, 0x52, 0x52, 0x66, 0x89, 0x6f, 0x20, 0x51, 0xc6, 0x0b, 0x09,
+	0x71, 0xb1, 0xe4, 0x25, 0xe6, 0xa6, 0x4a, 0x30, 0x81, 0x25, 0xc0, 0x6c, 0x25, 0x3d, 0x2e, 0x01,
+	0x84, 0x21, 0x50, 0x0b, 0xa5, 0xb8, 0x38, 0xd2, 0x8b, 0x52, 0x53, 0x4b, 0x32, 0xf3, 0xd2, 0xa1,
+	0x86, 0xc0, 0xf9, 0x46, 0xa1, 0x5c, 0x30, 0x1f, 0x3a, 0x09, 0x79, 0x72, 0x71, 0x21, 0x9c, 0x2b,
+	0x24, 0xad, 0x07, 0xf3, 0xba, 0x1e, 0x86, 0xbf, 0xa5, 0x64, 0xb0, 0x4b, 0x42, 0x2c, 0x54, 0x62,
+	0x48, 0x62, 0x03, 0x87, 0x9e, 0x31, 0x20, 0x00, 0x00, 0xff, 0xff, 0xb1, 0xaa, 0x32, 0x53, 0x4f,
+	0x01, 0x00, 0x00,
 }

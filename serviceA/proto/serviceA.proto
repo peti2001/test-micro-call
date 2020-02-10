@@ -1,17 +1,7 @@
 syntax = "proto3";
 package serviceA;
 
-message AddToQueueRequest {
-    string name = 1;
-}
-
-message AddToQueueResponse {
-    string messageId = 1;
-}
-
-
 service serviceB {
-    rpc AddToQueue (AddToQueueRequest) returns (AddToQueueResponse) {}
     rpc AckMessage (AckMessageRequest) returns (AckMessageResponse) {}
 }
 

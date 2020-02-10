@@ -8,8 +8,6 @@ It is generated from these files:
 	serviceA.proto
 
 It has these top-level messages:
-	AddToQueueRequest
-	AddToQueueResponse
 	AckMessageRequest
 	AckMessageResponse
 	RabbitMQRequest
@@ -46,7 +44,6 @@ var _ server.Option
 // Client API for ServiceB service
 
 type ServiceBService interface {
-	AddToQueue(ctx context.Context, in *AddToQueueRequest, opts ...client.CallOption) (*AddToQueueResponse, error)
 	AckMessage(ctx context.Context, in *AckMessageRequest, opts ...client.CallOption) (*AckMessageResponse, error)
 }
 
@@ -68,16 +65,6 @@ func NewServiceBService(name string, c client.Client) ServiceBService {
 	}
 }
 
-func (c *serviceBService) AddToQueue(ctx context.Context, in *AddToQueueRequest, opts ...client.CallOption) (*AddToQueueResponse, error) {
-	req := c.c.NewRequest(c.name, "ServiceB.AddToQueue", in)
-	out := new(AddToQueueResponse)
-	err := c.c.Call(ctx, req, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *serviceBService) AckMessage(ctx context.Context, in *AckMessageRequest, opts ...client.CallOption) (*AckMessageResponse, error) {
 	req := c.c.NewRequest(c.name, "ServiceB.AckMessage", in)
 	out := new(AckMessageResponse)
@@ -91,13 +78,11 @@ func (c *serviceBService) AckMessage(ctx context.Context, in *AckMessageRequest,
 // Server API for ServiceB service
 
 type ServiceBHandler interface {
-	AddToQueue(context.Context, *AddToQueueRequest, *AddToQueueResponse) error
 	AckMessage(context.Context, *AckMessageRequest, *AckMessageResponse) error
 }
 
 func RegisterServiceBHandler(s server.Server, hdlr ServiceBHandler, opts ...server.HandlerOption) error {
 	type serviceB interface {
-		AddToQueue(ctx context.Context, in *AddToQueueRequest, out *AddToQueueResponse) error
 		AckMessage(ctx context.Context, in *AckMessageRequest, out *AckMessageResponse) error
 	}
 	type ServiceB struct {
@@ -109,10 +94,6 @@ func RegisterServiceBHandler(s server.Server, hdlr ServiceBHandler, opts ...serv
 
 type serviceBHandler struct {
 	ServiceBHandler
-}
-
-func (h *serviceBHandler) AddToQueue(ctx context.Context, in *AddToQueueRequest, out *AddToQueueResponse) error {
-	return h.ServiceBHandler.AddToQueue(ctx, in, out)
 }
 
 func (h *serviceBHandler) AckMessage(ctx context.Context, in *AckMessageRequest, out *AckMessageResponse) error {

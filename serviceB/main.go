@@ -1,6 +1,8 @@
 package main
 
 import (
+	"context"
+	"fmt"
 	"log"
 	"time"
 
@@ -29,6 +31,23 @@ func main() {
 		Client: service.Client(),
 	}
 	proto.RegisterServiceBHandler(service.Server(), h)
+
+	go func() {
+		time.Sleep(time.Second * 2)
+		messageId := time.Now().Format(fmt.Sprintf("%d", time.Now().Nanosecond()))
+
+		m := h.Client.NewMessage(
+			"sayHello.topic",
+			&proto.RabbitMQRequest{
+				Name:      "Peter",
+				MessageId: messageId,
+			},
+		)
+
+		h.Client.Publish(context.Background(), m)
+
+		log.Printf("Ask ServiceA to do a long process by publishing a message. Waiting for ack so I can continue after that. MessageId: %s\n", messageId)
+	}()
 
 	if err := service.Run(); err != nil {
 		log.Fatal(err)
