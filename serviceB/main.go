@@ -13,13 +13,10 @@ import (
 )
 
 func main() {
-
-	amqpBroker := rabbitmq.NewBroker()
 	serviceName := "serviceB"
 
 	service := micro.NewService(
 		micro.Name(serviceName),
-		micro.Broker(amqpBroker),
 		micro.RegisterTTL(15*time.Second),
 		micro.RegisterInterval(5*time.Second),
 	)
