@@ -42,9 +42,11 @@ func (s Subscriber) Greeting(ctx context.Context, msg *proto.RabbitMQRequest) er
 	req := &proto.AckMessageRequest{
 		MessageId: msg.MessageId,
 	}
+	// This call won't work
 	resp, err := s.ServiceBClient.AckMessage(ctx, req)
 	log.Printf("Ack is sent to ServiceB. Status: %s\n", resp.Status)
 
+	// This call will work
 	resp, err = s.ServiceBClient.AckMessage(context.Background(), req)
 	log.Printf("Ack is sent to ServiceB with new context. Status: %s\n", resp.Status)
 	if err != nil {
