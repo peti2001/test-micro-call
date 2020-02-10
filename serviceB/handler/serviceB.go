@@ -4,7 +4,7 @@ import (
 	"context"
 	"log"
 
-	"github.com/micro/go-micro/client"
+	"github.com/micro/go-micro/v2/client"
 )
 import proto "github.com/peti2001/test-micro-call/serviceB/proto"
 

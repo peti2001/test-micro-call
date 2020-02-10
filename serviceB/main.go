@@ -6,9 +6,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/micro/go-micro"
-	"github.com/micro/go-plugins/broker/rabbitmq"
-	_ "github.com/micro/go-plugins/registry/consul"
+	micro "github.com/micro/go-micro/v2"
 
 	"github.com/peti2001/test-micro-call/serviceB/handler"
 	proto "github.com/peti2001/test-micro-call/serviceB/proto"
@@ -24,7 +22,6 @@ func main() {
 	)
 
 	service.Init()
-	rabbitmq.DefaultRabbitURL = "amqp://guest:guest@127.0.0.1:5672"
 
 	// HANDLERS
 	h := &handler.Handler{

@@ -4,9 +4,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/micro/go-micro"
-	"github.com/micro/go-plugins/broker/rabbitmq"
-	_ "github.com/micro/go-plugins/registry/consul"
+	micro "github.com/micro/go-micro/v2"
 	proto "github.com/peti2001/test-micro-call/serviceA/proto"
 	"github.com/peti2001/test-micro-call/serviceA/subscriber"
 )
@@ -21,7 +19,6 @@ func main() {
 	)
 
 	service.Init()
-	rabbitmq.DefaultRabbitURL = "amqp://guest:guest@127.0.0.1:5672"
 
 	//CLIENT
 	serviceBClient := proto.NewServiceBService("serviceB", service.Client())
