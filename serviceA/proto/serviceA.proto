@@ -1,0 +1,33 @@
+syntax = "proto3";
+package serviceA;
+
+message AddToQueueRequest {
+    string name = 1;
+}
+
+message AddToQueueResponse {
+    string messageId = 1;
+}
+
+
+service serviceB {
+    rpc AddToQueue (AddToQueueRequest) returns (AddToQueueResponse) {}
+    rpc AckMessage (AckMessageRequest) returns (AckMessageResponse) {}
+}
+
+message AckMessageRequest {
+    string messageId = 1;
+}
+
+message AckMessageResponse {
+    string status = 1;
+}
+
+message RabbitMQRequest {
+    string messageId = 1;
+    string name = 2;
+}
+
+message RabbitMQResponse {
+    string greeting = 1;
+}
